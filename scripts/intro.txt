@@ -1,0 +1,57 @@
+
+Declaring a variable 
+Examples:
+- foo=bar //spaces are important, everythin must be together
+- echo $foo //prints bar, the dolar sign represents the variable
+- echo "The word is $foo" //prints bar
+- echo 'the word is $foo' //with single quotes prints $foo not the value of $foo
+
+$ in scripts 
+$0 the name of the srcipt itself 
+$1 first argument 
+$2 .. $9 arguments
+$? error code form the previous command
+	0 - nothing went wrong - true
+	1 - things did not work - false
+$_ last argument of the prevoious command
+$$ process ID of the command running
+!! repeats the las command
+
+There are operators
+|| OR && AND
+
+- false || echo "Oops it failed" #If the first one does not work it will do the second one
+#with true the text wont be printed
+
+#And, executes the second argument if the first one ran well 
+- true && echo "hurray"
+
+foo=$(pwd) #passing a command into a variable
+
+#process substitution: gives the output to a temporary file and that file is given to a command
+#in here we are concatenating ls .. to ls .
+cat <(ls) <(ls..)
+	
+convert image.{png,jpg}
+# Will expand to
+convert image.png image.jpg
+
+cp /path/to/project/{foo,bar,baz}.sh /newpath
+# Will expand to
+cp /path/to/project/foo.sh /path/to/project/bar.sh /path/to/project/baz.sh /newpath
+
+# Globbing techniques can also be combined
+mv *{.py,.sh} folder
+# Will move all *.py and *.sh files
+
+
+mkdir foo bar
+# This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h
+touch {foo,bar}/{a..j}
+touch foo/x bar/y
+# Show differences between files in foo and bar
+diff <(ls foo) <(ls bar)
+# Outputs
+# < x
+# ---
+# > y
