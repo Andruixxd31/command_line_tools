@@ -1,0 +1,13 @@
+There are many signals that can interrupt, close, quit a procces or pause it
+
+^Z suspends a process which can later be added 
+bg %# will resume the proccess - bg %1 will resume the process at pos 1
+
+nohup sleep 200 & //the & adds the process in the background so the terminal can be used
+
+"jobs" will show the current process, whether they are running, suspended, etc.
+
+kill - can stopo processes with -STOP and also needs an identifier
+	-HUP - hangup
+	-KILL
+ 

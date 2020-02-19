@@ -1,0 +1,54 @@
+with i vim enters insert mode
+with the esc key we go back to normal mode
+
+There is also a command line mode which acceses the vim's
+it is accesed by typing ":" 
+
+with :sp we can open two windows
+
+
+Moving along normal mode can be achieved by using: 
+-k: moves up one line 
+-j: moves down one line
+-l: moves to the right 
+-h: moves to the left
+
+Vim’s design is based on the idea that a lot of programmer time is spent reading, navigating, and making small edits, as opposed to writing long streams of text. For this reason, Vim has multiple operating modes.
+
+Normal: for moving around a file and making edits
+Insert: for inserting text
+Replace: for replacing text
+Visual (plain, line, or block) mode: for selecting blocks of text
+Command-line: for running a command
+Keystrokes have different meanings in different operating modes. For example, the letter x in insert mode will just insert a literal character ‘x’, but in normal mode, it will delete the character under the cursor, and in visual mode, it will delete the selection.
+
+In its default configuration, Vim shows the current mode in the bottom left. The initial/default mode is normal mode. You’ll generally spend most of your time between normal mode and insert mode.
+
+You change modes by pressing <ESC> (the escape key) to switch from any mode back to normal mode. From normal mode, enter insert mode with i, replace mode with R, visual mode with v, visual line mode with V, visual block mode with <C-v> (Ctrl-V, sometimes also written ^V), and command-line mode with :.
+
+You use the <ESC> key a lot when using Vim: consider remapping Caps Lock to Escape (macOS instructions).
+
+Basics
+
+Inserting text
+
+From normal mode, press i to enter insert mode. Now, Vim behaves like any other text editor, until you press <ESC> to return to normal mode. This, along with the basics explained above, are all you need to start editing files using Vim (though not particularly efficiently, if you’re spending all your time editing from insert mode).
+
+Buffers, tabs, and windows
+
+Vim maintains a set of open files, called “buffers”. A Vim session has a number of tabs, each of which has a number of windows (split panes). Each window shows a single buffer. Unlike other programs you are familiar with, like web browsers, there is not a 1-to-1 correspondence between buffers and windows; windows are merely views. A given buffer may be open in multiple windows, even within the same tab. This can be quite handy, for example, to view two different parts of a file at the same time.
+
+By default, Vim opens with a single tab, which contains a single window.
+
+Command-line
+
+Command mode can be entered by typing : in normal mode. Your cursor will jump to the command line at the bottom of the screen upon pressing :. This mode has many functionalities, including opening, saving, and closing files, and quitting Vim.
+
+:q quit (close window)
+:w save (“write”)
+:wq save and quit
+:e {name of file} open file for editing
+:ls show open buffers
+:help {topic} open help
+:help :w opens help for the :w command
+:help w opens help for the w movement
